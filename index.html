@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Week 💕</title>
+
+  <style>
+    body {
+      background-color: #ffd6e8;
+      color: #1f7a1f;
+      font-family: Arial, sans-serif;
+
+      /* Center everything */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 650px;
+      padding: 20px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    h2 {
+      margin-top: 50px;
+      font-size: 26px;
+    }
+
+    button {
+      padding: 12px 24px;
+      margin: 15px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 25px;
+      border: none;
+      background-color: white;
+      color: #1f7a1f;
+      font-weight: bold;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      top: -10px;
+      animation: fall 3s linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h3><i>Hemant Singh Dhami</i></h3>
+
+    <p>
+      Or should I say my man child! <br><br>
+
+      We met on a random Tuesday in May of 2025.<br>
+      I was clueless that life would take a complete 360° turn and,
+      I would find the love that I always wanted with you.<br><br>
+
+      Meeting you, getting to know you, falling in love with you,
+      sharing life with you, is nothing short of a miracle.<br><br>
+
+      I have thanked God countless times for bringing us together.<br>
+      Your presence in my life is a gift beyond words.<br><br>
+
+      I love you, my man(child!). 💖
+      You will be my man child forever.
+    </p>
+
+    <h2>Will you be my Valentine? 🌹</h2>
+
+    <button onclick="celebrate()">Yes, I will be! 💕</button>
+    <button onclick="celebrate()">Or, yes… I will be! 💖</button>
+  </div>
+
+  <script>
+    function celebrate() {
+      alert("YAY!! 💖 I knew you would say yes 😘");
+
+      for (let i = 0; i < 80; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.backgroundColor =
+          ["#ff69b4", "#1f7a1f", "#ffffff", "#ff1493"][Math.floor(Math.random() * 4)];
+        confetti.style.animationDuration = (Math.random() * 2 + 2) + "s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+          confetti.remove();
+        }, 3000);
+      }
+    }
+  </script>
+
+</body>
+</html>
